@@ -4,7 +4,7 @@
       <h3 class="font-semibold text-lg mb-2 text-center">Title book</h3>
       <div class="overflow-hidden mb-4">
         <img
-          class="h-400 w-300 object-cover"
+          class="h w object-cover"
           src="/BookStore/assets/images/blue.jpg"
         />
       </div>
@@ -13,17 +13,17 @@
         <NuxtLink
           to="#"
           class="bg-indigo-900 text-white font-medium py-2 px-4 rounded hover:bg-sky-500 hover:text-black"
-        > Get Details
+        > View Details
         </NuxtLink>
       </div>
     </div>
   </div>
 </template>
 <style scoped>
-.h-400{
-    height: 400px;
+.h{
+    height: 300px;
 }
-.w-300{
-    width: 300px;
+.w{
+    width: 250px;
 }
 </style>

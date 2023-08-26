@@ -17,10 +17,16 @@
   
               <!-- Nav links -->
               <div class="mt-4 sm:mt-0 sm:ml-6 sm:flex sm:items-center">
-                <NuxtLink to="/" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-sky-500 hover:text-black focus:outline-none focus:bg-sky-500">Home</NuxtLink>
-                <NuxtLink to="/login" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-sky-500 hover:text-black focus:outline-none focus:bg-sky-500">Login</NuxtLink>
-                <NuxtLink to="/contact" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-sky-500 hover:text-black focus:outline-none focus:bg-sky-500">Contact Us</NuxtLink>
-              </div>
+    <NuxtLink to="/" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-sky-500 hover:text-black focus:bg-sky-500">Home</NuxtLink>
+    <NuxtLink to="/login" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-sky-500 hover:text-black focus:bg-sky-500 ml-2">Login</NuxtLink>
+    <NuxtLink to="/contact" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-sky-500 hover:text-black focus:bg-sky-500 ml-2">Contact Us</NuxtLink>
+</div>
+
+              <!-- <div class="mt-4 sm:mt-0 sm:ml-6 sm:flex sm:items-center">
+                <NuxtLink to="/" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-sky-500 hover:text-black  focus:bg-sky-500">Home</NuxtLink>
+                <NuxtLink to="/login" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-sky-500 hover:text-black  focus:bg-sky-500">Login</NuxtLink>
+                <NuxtLink to="/contact" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-sky-500 hover:text-black  focus:bg-sky-500">Contact Us</NuxtLink>
+              </div> -->
             </div>
           </div>
         </div>
