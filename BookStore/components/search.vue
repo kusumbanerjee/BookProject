@@ -33,3 +33,5 @@
 <style scoped>
 
 </style>
+
+<!-- v-model lazy is used so that data property will not be updated with every keystroke but only when the user either clicks away from the input field or presses Enter -->

@@ -18,5 +18,5 @@ export default {
 </script>
 
 <style scoped>
-/* Add Tailwind CSS classes or custom styles for the hero section here */
+
 </style>
