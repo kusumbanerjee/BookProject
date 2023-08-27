@@ -15,5 +15,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+</style>
 <!-- type books/333 to check this page -->
