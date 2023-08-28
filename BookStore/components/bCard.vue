@@ -5,7 +5,7 @@
       <div class="overflow-hidden mb-4">
         <img
           class="h w object-cover"
-          src="/BookStore/assets/images/blue.jpg"
+          src="@@/assets/images/blue.jpg"
         />
       </div>
 
