@@ -5,7 +5,7 @@
       <div class="overflow-hidden mb-4">
         <img
           class="h w object-cover"
-          src="@@/assets/images/blue.jpg"
+          src="image"
         />
       </div>
 
@@ -27,7 +27,7 @@
  <script setup>
 import { defineProps } from 'vue';
 
-defineProps(["ISBN", "title", "image"])
+ defineProps(["ISBN", "title", "image"]);
 </script> 
 
 
