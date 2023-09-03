@@ -9,7 +9,7 @@
     >
       <!-- passing the const data -->
 
-      <div v-for="book in books" :key="book.key">
+      <div v-for="book in books.works" :key="book.key">
         <BCard :ISBN="book.isbn" :title="book.title" :image="book.image" />
       </div>
     </div>
@@ -18,19 +18,20 @@
 
 <script setup>
 const { data: books } = await useFetch(
-  "https://openlibrary.org/api/books?bibkeys=ISBN:0451526538&format=json&jscmd=data"
+  "http://openlibrary.org/subjects/love.json"
 );
 </script>
 
-<!-- // const searchBook = (searchInput) => {
-//   console.log("search text:", searchInput);
-// };
 
- <!- google api -->
+ <!-- <!- google api -->
 <!-- https://www.googleapis.com/books/v1/volumes?q=pride+prejudice&download=epub&key=AIzaSyB_365A3v-S93S4h05_3_gt5PJEL1pHFZw -->
-<!-- // api openlibrary
-// const {data: books,} = await useFetch("https://openlibrary.org/api/books?bibkeys=ISBN:0451526538&callback=mycallback")
+<!-- api openlibrary
+ const {data: books,} = await useFetch("https://openlibrary.org/api/books?bibkeys=ISBN:0451526538&callback=mycallback")
 
-// static writing
-// const bookid = ref(233);
-// const title = ref("Psychology of Money");  -->
+  const bookid = ref(233);
+  static writing
+ const title = ref("Psychology of Money");  -->
+
+<!-- // const searchBook = (searchInput) => {
+   console.log("search text:", searchInput);
+ }; -->
