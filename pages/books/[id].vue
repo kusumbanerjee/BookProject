@@ -1,9 +1,10 @@
 <template>
   <div>
-    <h1>
+    <bDetail />
+    <!-- <h1>
       this page is a trial page of books details to be shown when we use
       /id-num, will be updated with actual book details
-    </h1>
+    </h1> -->
   </div>
 </template>
 
@@ -15,6 +16,5 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
 <!-- type books/333 to check this page -->

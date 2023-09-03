@@ -9,23 +9,14 @@
     >
       <!-- passing the const data -->
 
-      <div v-for="n in 8">
-        <BCard :bookid="bookid" 
-      :title="title" />
+      <div v-for="n in 7">
+        <BCard :bookid="bookid" :title="title" />
       </div>
-    
     </div>
   </div>
 </template>
 
 <script setup>
-// const searchBook = (searchInput) => {
-//   console.log("search text:", searchInput);
-// };
-
-//  fetching the bookdata, philal and pass it through props in bcard.vue... will be using API fetch for this soon
-
-
-const bookid = ref(333);
+const bookid = ref(233);
 const title = ref("Psychology of Money");
 </script>
