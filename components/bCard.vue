@@ -27,7 +27,7 @@
  <script setup>
 import { defineProps } from 'vue';
 
- defineProps(["ISBN", "title", "image"]);
+ defineProps(["ISBN", "title", "image", "bookid"]);
 </script> 
 
 

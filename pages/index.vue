@@ -9,16 +9,16 @@
     >
       <!-- passing the const data -->
 
-      <div v-for="book in books.works" :key="book.key">
-        <BCard :ISBN="book.isbn" :title="book.title" :image="book.image" />
+      <div v-for="book in data.items" :key="book.id">
+        <BCard :bookid="book.id" :ISBN="book.volumeInfo.industryIdentifiers[0].identifier" :title="book.volumeInfo.title" :image="book.volumeInfo.imageLinks.thumbnail" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-const { data: books } = await useFetch(
-  "http://openlibrary.org/subjects/love.json"
+const { data: data } = await useFetch(
+  "https://www.googleapis.com/books/v1/volumes?q=mystery"
 );
 </script>
 
