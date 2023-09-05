@@ -1,36 +1,18 @@
 <template>
   <!-- img section -->
-  <div class="grid sm:grid-cols-3 gap-7 justify-items-center m-10">
-    <div class="bg-white round-lg shadow-md overflow-hidden">
-      <h1> {{ title  }}</h1>
-      <h3>{{ des }}</h3>
-      <h2>{{ author }}</h2>
-      <img
-        class="h-400 w-300 object-cover"
-        :src=  image
-        alt=""
-      />
-    </div>
+  <div class="flex flex-col sm:flex-row gap-7 justify-items-center m-10">
+    <img class="w-full h-96 sm:w-64 sm:h-64 sm:object-cover" :src="image" />
 
-    <!-- details section -->
-    <div class="sm:col-span-2 mx-6">
-   
-
+    <div class="bg-white round-lg shadow-md p-4 sm:ml-4">
+      <h1 class="font-bold text-2xl mb-3">{{ title }}</h1>
+      <h2 class="font-semibold text-lg mb-3">{{ author }}</h2>
+      <h3 class="text-gray-500 text-md mb-2">{{ des }}</h3>
     </div>
   </div>
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps } from "vue";
 
- defineProps(["ISBN", "title", "image", "author", "des"]);
+defineProps(["ISBN", "title", "image", "author", "des"]);
 </script>
-
-      <!-- <h1 class="font-bold text-2xl mb-5">Dark Matter</h1>
-      <h3 class="font-semibold text-lg mb-5">Author : Blake Crouch</h3>
-      <p class="text-gray-500 text-md mb-8">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis
-        rerum vel tenetur quasi molestiae! Maiores, nemo rerum repudiandae quis
-        dignissimos velit accusantium ut suscipit, aliquam fugiat ipsa! Eveniet,
-        possimus reiciendis. -->
-      <!-- </p> -->

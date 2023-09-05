@@ -4,12 +4,4 @@ export default defineNuxtConfig({
   modules:["@nuxtjs/tailwindcss"],
   _modules:['nuxt-icon'],
 
-  //  image: {
-  //   domains: ["https://picsum.photos"],
-  //   presets: {
-  //     picsum: {
-  //       baseURL: "/_ipx/https://picsum.photos/id/"
-  //     }
-  //   }
-  // }
 });

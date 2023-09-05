@@ -1,6 +1,6 @@
 <template>
   <div>
-    <bDetail 
+    <BDetail
     :title="details.volumeInfo.title"
     :author="details.volumeInfo.authors[0]"
     :des="details.volumeInfo.description"
@@ -18,4 +18,3 @@
 
 
 <style scoped></style>
-
