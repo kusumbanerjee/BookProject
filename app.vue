@@ -1,20 +1,13 @@
 <template>
-<div>
-  
-  <NuxtLayout>
-    <Navbar/>
-   
+  <div>
+    <NuxtLayout>
+      <Navbar />
 
-  <NuxtPage/>
-  
-  </NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
