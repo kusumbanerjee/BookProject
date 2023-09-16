@@ -5,7 +5,7 @@
 
     <div class="bg-white round-lg shadow-md p-2 sm:ml-4">
       <h1 class="font-bold text-2xl mb-2">{{ title }}</h1>
-      <!-- <h2 class="font-semibold text-lg mb-2">{{ author }}</h2> -->
+      <h2 class="font-semibold text-lg mb-2">{{ author }}</h2>
       <h3 class="text-gray-500 text-md mb-2">{{ des }}</h3>
     </div>
   </div>
@@ -14,5 +14,5 @@
 <script setup>
 // import { defineProps } from "vue";
 
-defineProps(["ISBN", "title", "image", "author", "des"]);
+defineProps([ "title", "image", "author", "des"]);
 </script>

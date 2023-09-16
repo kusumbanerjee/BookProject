@@ -1,4 +1,3 @@
-
 <template>
   <!-- the ultimate bg -->
   <div class="bg-gray-100">
@@ -61,4 +60,3 @@
     </div>
   </div>
 </template>
-

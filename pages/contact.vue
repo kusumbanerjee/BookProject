@@ -47,6 +47,7 @@
             <!-- name -->
             <div>
               <label for=""> Name </label>
+              <!-- erase this & dynamically pass by defineprops -->
 
               <input
                 type="text"

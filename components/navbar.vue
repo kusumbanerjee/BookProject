@@ -21,6 +21,13 @@
                 class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-sky-500 hover:text-black focus:bg-sky-500"
                 >Home</NuxtLink
               >
+
+              <NuxtLink
+                to="/sign"
+                class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-sky-500 hover:text-black focus:bg-sky-500"
+                >Sign up</NuxtLink
+              >
+
               <NuxtLink
                 to="/login"
                 class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-sky-500 hover:text-black focus:bg-sky-500 ml-2"
