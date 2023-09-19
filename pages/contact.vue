@@ -1,6 +1,6 @@
 <template>
   <!-- the ultimate bg -->
-  <div class=" bg-gray-100">
+  <div class="bg-gray-100">
     <div class="flex w-full min-h-screen justify-center items-center">
       <!-- contact section -->
       <div
@@ -43,14 +43,19 @@
         <!-- contact form -->
 
         <div class="bg-indigo-200 text-black rounded-xl shadow-lg p-8 pt-4 md:w-80">
-          <form action="" class="flex flex-col space-y-4">
+          <!-- Display a success message when the message is sent -->
+          <div v-if="msgSent" class="text-navy">
+            Message sent successfully!
+          </div>
+
+          <form @submit.prevent="sendMessage" class="flex flex-col space-y-4">
             <!-- name -->
             <div>
-              <label for=""> Name </label>
-              <!-- erase this & dynamically pass by defineprops -->
-
+              <label for="name">Name</label>
               <input
+                v-model="name"
                 type="text"
+                id="name"
                 placeholder="Your Name"
                 class="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-indigo-700"
               />
@@ -58,10 +63,11 @@
 
             <!-- email -->
             <div>
-              <label for=""> Email </label>
-
+              <label for="email">Email</label>
               <input
+                v-model="email"
                 type="text"
+                id="email"
                 placeholder="Email Address"
                 class="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-indigo-700"
               />
@@ -69,16 +75,18 @@
 
             <!-- msg -->
             <div>
-              <label for=""> Message </label>
-
+              <label for="message">Message</label>
               <!-- to expand the message area -->
               <textarea
-                placeholder="message" rows="4 "
+                v-model="message"
+                id="message"
+                placeholder="Message"
+                rows="4"
                 class="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-indigo-700"
-             ></textarea>
+              ></textarea>
             </div>
 
-            <button class="inline-block w-64 self-end bg-indigo-900 text-white text-sm px-6 py-2 hover:bg-sky-500 hover:text-black rounded-lg transition duration-300 uppercase"> Send Message </button>
+            <button type="submit" class="inline-block w-64 self-end bg-indigo-900 text-white text-sm px-6 py-2 hover:bg-sky-500 hover:text-black rounded-lg transition duration-300 uppercase">Send Message</button>
           </form>
         </div>
       </div>
@@ -86,3 +94,30 @@
   </div>
 </template>
 
+<script setup>
+import { ref } from 'vue';
+
+// Initialize variables for form inputs
+const name = ref('');
+const email = ref('');
+const message = ref('');
+
+// Initialize a variable to track ki msg sent hua k nhi
+const msgSent = ref(false);
+
+// Function to handle form submission
+const sendMessage = async () => {
+  // Check if any field is empty
+  if (!name.value || !email.value || !message.value) {
+    alert('Please fill out all fields.');
+    return;
+  }
+
+  msgSent.value = true;
+
+  // Clearing form fields after sending
+  name.value = '';
+  email.value = '';
+  message.value = '';
+};
+</script>

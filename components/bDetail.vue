@@ -1,5 +1,5 @@
 <template>
-  <!-- img section -->
+
   <div class="flex flex-col sm:flex-row justify-items-center m-10">
     <img class="w-full h-96 sm:w-64 sm:h-64 sm:object-cover" :src="image" />
 
@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-// import { defineProps } from "vue";
+
 
 defineProps([ "title", "image", "author", "des"]);
 </script>

@@ -7,21 +7,26 @@
     <div
       class="grid md:grid-cols-4 sm:grid-cols-1 justify-items-center bg-sky-50"
     >
-      <!-- Loop through the books from the API response -->
+      <!-- passing the data from the json file, (google api)-->
 
-      <div v-for="book in data" :key="book.id">
+      <div v-for="book in data.items" :key="book.id">
         <BCard
           :bookid="book.id"
-          :title="book.title"
-          :author="book.author"
-          :des="book.description"
-          :image="book.image_url"
+          :title="book.volumeInfo.title"
+          :image="book.volumeInfo.imageLinks?.thumbnail"
         />
       </div>
     </div>
   </div>
 </template>
+<!--    :ISBN="book.volumeInfo.industryIdentifiers[0].identifier" -->
 
 <script setup>
-const { data } = await useFetch("https://example-data.draftbit.com/books?_limit=200");
+
+const searchBook = (searchInput) => {
+  console.log("Search Book :", searchInput )
+}
+const { data: data } = await useFetch(
+  "https://www.googleapis.com/books/v1/volumes?q=suspense+inauthor:keyes&maxResults=40&key=AIzaSyAlTgCaAkO75NYmltCt8UwRvu6VNZXirv0"
+);
 </script>
