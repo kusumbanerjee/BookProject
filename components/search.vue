@@ -1,6 +1,6 @@
 <template>
-  <div id="searchBar">
-    <form @submit.prevent="executeSearch">
+  <div id="search">
+    <form @submit.prevent="doSearch">
       <div class="flex justify-center">
         <input
           class="border border-navy my-4 py-4 px-4 w-3/4 rounded-l-full focus:outline-none focus:ring-2 focus:sky-500"
@@ -19,11 +19,9 @@
     <div id="Results" class="mt-4">
       <div v-if="loading">Loading...</div>
       <div v-else-if="results.length > 0">
-        
         <div v-for="book in results" :key="book.id">
           <!-- Making the entire card clickable -->
           <a :href="book.volumeInfo.previewLink" class="block">
-         
             <div class="flex flex-col sm:flex-row justify-items-center m-10">
               <img
                 class="w-full h-96 sm:w-64 sm:h-64 sm:object-cover"
@@ -37,14 +35,13 @@
                 <h2 class="font-semibold text-lg mb-2">
                   Author: {{ book.volumeInfo.authors.join(", ") }}
                 </h2>
-             
               </div>
             </div>
           </a>
         </div>
       </div>
-      <!-- Only display "No results found" jb koi search book nhi mili -->
-      <div v-else-if="searchExecuted && !loading">No results found</div>
+      <!-- Only display "No results found" when there are no results and the search has been executed -->
+      <div v-else-if="searchExecuted">No results found</div>
     </div>
   </div>
 </template>
@@ -57,7 +54,7 @@ const loading = ref(false);
 const results = ref([]);
 const searchExecuted = ref(false);
 
-const executeSearch = async () => {
+const doSearch = async () => {
   loading.value = true;
   results.value = [];
 
@@ -69,14 +66,12 @@ const executeSearch = async () => {
     const data = await response.json();
     if (data.items && data.items.length > 0) {
       results.value = data.items;
-    } else {
-      results.value = [];
     }
   } catch (error) {
     console.error("Error:", error);
   } finally {
     loading.value = false;
-    searchExecuted.value = true;
+    searchExecuted.value = results.value.length === 0;
   }
 };
 </script>
