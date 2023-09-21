@@ -33,6 +33,7 @@
                 class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-sky-500 hover:text-black focus:bg-sky-500 ml-2"
                 >Login</NuxtLink
               >
+
               <NuxtLink
                 to="/contact"
                 class="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-sky-500 hover:text-black focus:bg-sky-500 ml-2"

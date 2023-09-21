@@ -20,7 +20,8 @@
       <div v-if="loading">Loading...</div>
       <div v-else-if="results.length > 0">
         <div v-for="book in results" :key="book.id">
-          <!-- Making the entire card clickable -->
+
+          <!-- the entire card clickable -->
           <a :href="book.volumeInfo.previewLink" class="block">
             <div class="flex flex-col sm:flex-row justify-items-center m-10">
               <img
@@ -38,9 +39,10 @@
               </div>
             </div>
           </a>
+           
         </div>
       </div>
-      <!-- Only display "No results found" when there are no results and the search has been executed -->
+      <!-- Only display "No results found" jb koi book nhi mili -->
       <div v-else-if="searchExecuted">No results found</div>
     </div>
   </div>

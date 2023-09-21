@@ -15,6 +15,8 @@
           :title="book.volumeInfo.title"
           :image="book.volumeInfo.imageLinks?.thumbnail"
         />
+
+     
       </div>
     </div>
   </div>

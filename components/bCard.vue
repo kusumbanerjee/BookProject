@@ -11,25 +11,29 @@
       <!-- Buy option, amazon link use krke -->
       <a
         :href="'https://www.amazon.in/s?k=' + title"
-        class="text-navy hover:underline hover:text-blue-700"
+        class="bg-indigo-900 text-white font-medium py-2 px-4 rounded hover:bg-sky-500 hover:text-black"
         >Buy</a
       >
 
-      <!-- inn dono pe kaam krnge..not cmplted -->
+      <!-- iss pe kaam krnge..not cmplted -->
       <!-- Add to Bookmark option -->
       <button
         @click="addToBookmark"
-        class="text-navy hover:underline hover:text-blue-700"
+        class="bg-indigo-900 text-white font-medium py-2 px-4 rounded hover:bg-sky-500 hover:text-black"
       >
-        Add to Bookmark
+        Bookmark
       </button>
 
-      <!-- Read About the Book option -->
-      <a
-        :href="'/book/' + bookid"
-        class="text-navy hover:underline hover:text-blue-700"
-        >Read About the Book</a
+      <NuxtLink
+        :to="`books/${bookid}`"
+        class="bg-indigo-900 text-white font-medium py-2 px-4 rounded hover:bg-sky-500 hover:text-black"
       >
+        View Details
+      </NuxtLink>
+
+      
+      
+     
     </div>
   </div>
 </template>
@@ -41,4 +45,27 @@ const props = defineProps({
   author: String,
   bookid: String,
 });
+
+
 </script>
+
+ <!-- trying Star rating feature using vue-star-rating -->
+       <!-- <client-only>
+    <star-rating 
+      v-model="selectedRating"
+      :increment="0.5"
+      :read-only="false"
+      @rating-selected="setRating"
+    ></star-rating>
+  </client-only> -->
+  <!-- inside script, stars-->
+<!-- 
+ import StarRating from 'vue-star-rating';
+
+let selectedRating = 0;
+
+Function 
+  const setRating = (rating) => {
+     selectedRating = rating;
+
+}; -->

@@ -8,11 +8,15 @@
       <h2 class="font-semibold text-lg mb-2">{{ author }}</h2>
       <h3 class="text-gray-500 text-md mb-2">{{ des }}</h3>
     </div>
+
+      
   </div>
+   <!-- Displaying the BookReview component for each book -->
+   <BookReview :book="book" />
 </template>
 
 <script setup>
 
-
+import BookReview from '@/components/BookReview.vue';
 defineProps([ "title", "image", "author", "des"]);
 </script>
