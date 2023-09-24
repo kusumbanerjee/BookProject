@@ -19,31 +19,42 @@
     <div id="Results" class="mt-4">
       <div v-if="loading">Loading...</div>
       <div v-else-if="results.length > 0">
-        <div v-for="book in results" :key="book.id">
-
-          <!-- the entire card clickable -->
-          <a :href="book.volumeInfo.previewLink" class="block">
-            <div class="flex flex-col sm:flex-row justify-items-center m-10">
-              <img
-                class="w-full h-96 sm:w-64 sm:h-64 sm:object-cover"
-                :src="book.volumeInfo.imageLinks?.thumbnail"
-              />
-
-              <div class="bg-white round-lg shadow-md p-2 sm:ml-4">
+        <div class="flex flex-wrap">
+          <div v-for="book in results" :key="book.id" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
+            <!-- Card -->
+            <div class="bg-white border border-black shadow-md p-2">
+              <a :href="book.volumeInfo.previewLink" target="_blank">
+                <img
+                  class="w-full h-96 object-cover cursor-pointer"
+                  :src="book.volumeInfo.imageLinks?.thumbnail"
+                  @click="openImageLink(book.volumeInfo.previewLink)"
+                />
+              </a>
+              <div class="bg-white round-lg shadow-md p-2 mt-2">
                 <h1 class="font-bold text-2xl mb-2">
                   {{ book.volumeInfo.title }}
                 </h1>
                 <h2 class="font-semibold text-lg mb-2">
                   Author: {{ book.volumeInfo.authors.join(", ") }}
                 </h2>
+                <div class="flex justify-between mt-4 px-4 py-2 space-x-4">
+                  <!-- Buy option, amazon link use krke -->
+                  <a
+                    :href="'https://www.amazon.in/s?k=' + book.volumeInfo.title"
+                    class="bg-indigo-900 text-white font-medium py-2 px-4 rounded hover:bg-sky-500 hover:text-black"
+                  >
+                    Buy
+                  </a>
+                  <!-- Add to Bookmark option -->
+                  <Dropdown />
+                </div>
               </div>
             </div>
-          </a>
-           
+          </div>
         </div>
       </div>
       <!-- Only display "No results found" jb koi book nhi mili -->
-      <div v-else-if="searchExecuted">No results found</div>
+      <div v-else-if="searchExecuted" class="text-center mt-4 text-lg">No results found</div>
     </div>
   </div>
 </template>
@@ -75,5 +86,9 @@ const doSearch = async () => {
     loading.value = false;
     searchExecuted.value = results.value.length === 0;
   }
+};
+
+const openImageLink = (link) => {
+  window.open(link, "_blank");
 };
 </script>
