@@ -30,7 +30,29 @@
       </NuxtLink>
 
       
-      
+      <!-- try -->
+      <div v-for="book in results" :key="book.id">
+
+<!-- the entire card clickable -->
+<a :href="book.volumeInfo.previewLink" class="block">
+  <div class="flex flex-col sm:flex-row justify-items-center m-10">
+    <img
+      class="w-full h-96 sm:w-64 sm:h-64 sm:object-cover"
+      :src="book.volumeInfo.imageLinks?.thumbnail"
+    />
+
+    <div class="bg-white round-lg shadow-md p-2 sm:ml-4">
+      <h1 class="font-bold text-2xl mb-2">
+        {{ book.volumeInfo.title }}
+      </h1>
+      <h2 class="font-semibold text-lg mb-2">
+        Author: {{ book.volumeInfo.authors.join(", ") }}
+      </h2>
+    </div>
+  </div>
+</a>
+ 
+</div>
      
     </div>
   </div>
@@ -46,24 +68,3 @@ const props = defineProps({
 
 
 </script>
-
- <!-- trying Star rating feature using vue-star-rating -->
-       <!-- <client-only>
-    <star-rating 
-      v-model="selectedRating"
-      :increment="0.5"
-      :read-only="false"
-      @rating-selected="setRating"
-    ></star-rating>
-  </client-only> -->
-  <!-- inside script, stars-->
-<!-- 
- import StarRating from 'vue-star-rating';
-
-let selectedRating = 0;
-
-Function 
-  const setRating = (rating) => {
-     selectedRating = rating;
-
-}; -->

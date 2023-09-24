@@ -62,6 +62,7 @@
                 required
               />
             </div>
+      
             <button
               type="submit"
               class="inline-block w-64 self-end bg-indigo-900 text-white text-sm px-6 py-2 hover:bg-sky-500 hover:text-black rounded-lg transition duration-300 uppercase"
@@ -77,16 +78,14 @@
 
 <script setup>
 
-// supabase probly not working..will figure out
-import { createClient } from '@supabase/supabase-js';
+// supabase probly not working.
 import { ref } from 'vue';
+import { supabase } from '/src/lib/supabase_utils.js';
 
- const supabase = createClient('https://txsxagqsqkctnmwfzbbe.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR4c3hhZ3FzcWtjdG5td2Z6YmJlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTQ3OTEzMTUsImV4cCI6MjAxMDM2NzMxNX0.75Ws41gYiDr98wOqAvo9cHsUxo8OfcSmcogk7j-ueT8');
 const email = ref('');
 const password = ref('');
 const confirmPassword = ref('');
 
-// if passwords not matched
 const signup = async () => {
   if (password.value !== confirmPassword.value) {
     console.error('Passwords do not match');
@@ -99,13 +98,14 @@ const signup = async () => {
       password: password.value,
     });
 
-    // errors handling...error txt, success
     if (error) {
       console.error('Error signing up:', error.message);
-    
     } else if (user) {
       console.log('User signed up successfully:', user);
-     
+
+    
+      // const router = useRouter();
+      // router.push({ name: 'index' }); 
     }
   } catch (error) {
     console.error('Error signing up:', error.message);
