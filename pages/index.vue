@@ -29,6 +29,6 @@ const searchBook = (searchInput) => {
   console.log("Search Book :", searchInput )
 }
 const { data: data } = await useFetch(
-  "https://www.googleapis.com/books/v1/volumes?q=suspense+inauthor:keyes&maxResults=40&key=AIzaSyAlTgCaAkO75NYmltCt8UwRvu6VNZXirv0"
+  "https://www.googleapis.com/books/v1/volumes?q=programming+inauthor:keyes&maxResults=40&key=AIzaSyAlTgCaAkO75NYmltCt8UwRvu6VNZXirv0"
 );
 </script>

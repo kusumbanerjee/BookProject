@@ -7,30 +7,25 @@
     />
   </div>
 </template>
-<!--  :author="details.volumeInfo.authors[0]" -->
-<!-- :ISBN="details.volumeInfo.industryIdentifiers[0].identifier" -->
 
 <script setup>
-const { data: details } = await useFetch(
-  "https://www.googleapis.com/books/v1/volumes/Dnt8DwAAQBAJ"
-);
+import axios from 'axios';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+const bookId = route.params.id;
+
+const fetchData = async () => {
+  try {
+    const response = await axios.get(`https://www.googleapis.com/books/v1/volumes/${bookId}`);
+    const responseData = response.data;
+    return { details: responseData };
+  } catch (error) {
+    console.error("Error:", error);
+    return { details: null };
+  }
+};
+
+const { details } = await fetchData();
 </script>
 
-<!-- trying to implement ssr -->
-<!-- //   import { onRender, useFetch } from '@nuxt/http';
-
-// const Data = async () => {
-//   try {
-//     const { data: Data } = await useFetch(
-//       "https://www.googleapis.com/books/v1/volumes?q=mystery"
-//     );
-
-  
-//   } catch (error) {
-//     console.error("Error fetching data:", error);
-//   }
-// }
-
-// onRender(Data); -->
-
-<style scoped></style>
