@@ -10,7 +10,7 @@
       <div>
         <!-- Submit button -->
         <button
-          class="bg-indigo-900 text-white text-sm px-6 py-2 hover:bg-sky-500 hover:text-black rounded-lg transition duration-300"
+          class="bg-slate-700 text-white text-sm px-6 py-2 hover:bg-slate-400 hover:text-black rounded-lg transition duration-300"
           @click="submitReview"
         >
           Submit

@@ -41,7 +41,7 @@
                   <!-- Buy option, amazon link use krke -->
                   <a
                     :href="'https://www.amazon.in/s?k=' + book.volumeInfo.title"
-                    class="bg-indigo-900 text-white font-medium py-2 px-4 rounded hover:bg-sky-500 hover:text-black"
+                    class="bg-slate-700 text-white font-medium py-2 px-4 rounded hover:bg-slate-400 hover:text-black"
                   >
                     Buy
                   </a>

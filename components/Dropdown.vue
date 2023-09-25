@@ -1,6 +1,6 @@
 <template>
     <div class="relative" @click="toggleDropdown">
-      <button class="bg-indigo-900 text-white font-medium py-2 px-4 rounded hover:bg-sky-500 hover:text-black">
+      <button class=" text-teal-100 font-medium py-2 px-4 rounded hover:bg-slate-400 bg-slate-700 hover:text-black">
         Bookmark <Icon :name="isOpen ? 'ph:caret-up' : 'ph:caret-down'" class="align-bottom" />
       </button>
   

@@ -11,7 +11,7 @@
       <!-- Buy option with Amazon link (opens in a new tab) -->
       <a
         :href="'https://www.amazon.in/s?k=' + title"
-        class="bg-indigo-900 text-white font-medium py-2 px-4 rounded hover:bg-sky-500 hover:text-black"
+        class=" text-teal-100 font-medium py-2 px-4 rounded hover:bg-slate-400 bg-slate-700 hover:text-black"
         target="_blank"
       >
         Buy
@@ -23,7 +23,7 @@
       <!-- View Details button -->
       <NuxtLink
         :to="`books/${bookid}`"
-        class="bg-indigo-900 text-white font-medium py-2 px-4 rounded hover:bg-sky-500 hover:text-black"
+        class="bg-slate-700 text-teal-100 font-medium py-2 px-4 rounded hover:bg-slate-400 hover:text-black"
       >
         View Details
       </NuxtLink>
