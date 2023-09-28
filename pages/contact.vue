@@ -86,7 +86,7 @@
               ></textarea>
             </div>
 
-            <button type="submit" class="inline-block w-64 self-end bg-indigo-900 text-white text-sm px-6 py-2 hover:bg-sky-500 hover:text-black rounded-lg transition duration-300 uppercase">Send Message</button>
+            <button type="submit" class="inline-block w-64 self-end  text-white text-sm px-6 py-2 bg-slate-700  hover:bg-slate-500 hover:text-black rounded-lg transition duration-300 uppercase">Send Message</button>
           </form>
         </div>
       </div>

@@ -46,14 +46,14 @@
                 type="password"
                 id="password"
                 placeholder="Enter your password"
-                class="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-indigo-700"
+                class="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-slate-700"
                 required
               />
             </div>
 
             <button
               type="submit"
-              class="inline-block w-64 self-end bg-indigo-900 text-white text-sm px-6 py-2 hover:bg-sky-500 hover:text-black rounded-lg transition duration-300 uppercase"
+              class="inline-block w-64 self-end bg-slate-700  hover:bg-slate-500 text-white text-sm px-6 py-2 hover:text-black rounded-lg transition duration-300 uppercase"
             >
               LOGIN
             </button>

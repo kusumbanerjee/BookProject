@@ -9,7 +9,7 @@
           v-model.lazy="query"
         />
         <button
-          class="bg-indigo-900 text-white hover:bg-sky-500 hover:text-black my-4 py-2 px-4 rounded-r-full"
+          class="text-white bg-slate-700  hover:bg-slate-500 hover:text-black my-4 py-2 px-4 rounded-r-full"
           type="submit"
         >
           Search
