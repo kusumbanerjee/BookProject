@@ -25,7 +25,7 @@ import { useRoute, useRouter } from 'vue-router';
   const route = useRoute();
   
   const options = ['Want to Read', 'Read', 'Reading'];
-  const bookmarkStatus = ref(''); 
+  
   function toggleDropdown() {
     isOpen.value = !isOpen.value;
   }

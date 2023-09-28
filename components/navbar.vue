@@ -15,9 +15,9 @@
             >Home</NuxtLink>
 
             <NuxtLink
-              to="/explore"
+              to="/shelf"
               class="px-3 py-2 rounded-md text-sm font-medium text-teal-200 font-mono hover:bg-slate-400 hover:text-black focus:bg-slate-400"
-            >Explore </NuxtLink>
+            >Shelf </NuxtLink>
 
             <NuxtLink
               to="/login"

@@ -1,5 +1,5 @@
 <template>
-  <section class="hero bg-navy font-mono text-teal-200 py-64">
+  <section class="hero bg-navy font-mono text-teal-200 py-56">
    
     <div class=" mx-auto text-center">
     
