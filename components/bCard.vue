@@ -18,7 +18,7 @@
       </a>
 
       <!-- Add to Bookmark option -->
-      <Dropdown />
+      <Dropdown  />
 
       <!-- View Details button -->
       <NuxtLink
