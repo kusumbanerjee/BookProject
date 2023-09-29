@@ -24,7 +24,7 @@
           class="bg-indigo-200 text-black rounded-xl shadow-lg p-8 pt-4 md:w-80"
         >
           <form
-            @submit.prevent="handleSignUp"
+            @submit.prevent="SignUp"
             class="flex flex-col space-y-4"
           >
             <!-- email -->
@@ -88,7 +88,7 @@ const email = ref("");
 const password = ref("");
 const confirmPassword = ref("");
 
-const handleSignUp = async () => {
+const SignUp = async () => {
   try {
     loading.value = true;
     const { data, error } = await supabase.auth.signUp({
@@ -97,7 +97,7 @@ const handleSignUp = async () => {
     });
     if (error) throw error;
     alert("Signed Up Successfully");
-    // Redirect to  page
+
     window.location.href = "/shelf";
   } catch (error) {
     if (error instanceof Error) {

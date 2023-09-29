@@ -1,9 +1,9 @@
 <template>
   <div>
     <Hero />
-    
-    <Content/>
-<div
+
+    <Content />
+    <div
       class="grid md:grid-cols-4 sm:grid-cols-1 justify-items-center bg-slate-200"
     >
       <!-- passing the data from the json file, (google api)-->
@@ -16,13 +16,13 @@
         />
       </div>
     </div>
-</div>
+  </div>
 </template>
 <script setup>
-  import { ref } from 'vue';
+import { ref } from "vue";
 
 const isUserSignedIn = ref(false);
-  const { data: data } = await useFetch(
-      "https://www.googleapis.com/books/v1/volumes?q=horror+inauthor:keyes&maxResults=40&key=AIzaSyAlTgCaAkO75NYmltCt8UwRvu6VNZXirv0"
-    );
+const { data: data } = await useFetch(
+  "https://www.googleapis.com/books/v1/volumes?q=horror+inauthor:keyes&maxResults=40&key=AIzaSyAlTgCaAkO75NYmltCt8UwRvu6VNZXirv0"
+);
 </script>

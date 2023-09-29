@@ -16,6 +16,8 @@
           :title="book.volumeInfo.title"
           :image="book.volumeInfo.imageLinks?.thumbnail"
         />
+        
+        <!-- <Dropdown :book="book" /> -->
       </div>
     </div>
     </div>
