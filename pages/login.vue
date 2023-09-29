@@ -65,29 +65,31 @@
 </template>
 
 <script setup>
-import { createClient } from '@supabase/supabase-js';
-import { ref } from 'vue';
+import { ref } from "vue";
+import { supabase } from "/src/lib/supabaseClient";
 
-const supabase = createClient('https://txsxagqsqkctnmwfzbbe.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR4c3hhZ3FzcWtjdG5td2Z6YmJlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTQ3OTEzMTUsImV4cCI6MjAxMDM2NzMxNX0.75Ws41gYiDr98wOqAvo9cHsUxo8OfcSmcogk7j-ueT8');
-const email = ref('');
-const password = ref('');
+const loading = ref(false);
+const email = ref("");
+const password = ref("");
+
 
 const login = async () => {
   try {
-    const { user, error } = await supabase.auth.signIn({
+    loading.value = true;
+    const { data, error } = await supabase.auth.signUp({
       email: email.value,
       password: password.value,
     });
-
-    if (error) {
-      console.error('Error signing in:', error.message);
-      // an error message show
-    } else if (user) {
-      console.log('User signed in successfully:', user);
-
-    }
+    if (error) throw error;
+    alert(" Welcome To BookStore ");
+    // Redirect to  page
+    window.location.href = "/shelf";
   } catch (error) {
-    console.error('Error signing in:', error.message);
+    if (error instanceof Error) {
+      alert(error.message);
+    }
+  } finally {
+    loading.value = false;
   }
 };
 </script>
