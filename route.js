@@ -13,7 +13,7 @@ const routes = [
   {
     path: '/want-to-read',
     name: 'WantToRead',
-    component: () => import('@/pages/WantToRead.vue'), 
+    component:'@/pages/WantToRead.vue', 
   },
   {
     path: '/read',
