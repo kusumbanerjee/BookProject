@@ -5,7 +5,7 @@
         <input
           class="border border-navy my-4 py-4 px-4 w-3/4 rounded-l-full focus:outline-none focus:ring-2 focus:sky-500"
           type="text"
-          placeholder="Search Books"
+          placeholder="Search Books . . ."
           v-model.lazy="query"
         />
         <button
@@ -42,6 +42,7 @@
                   <a
                     :href="'https://www.amazon.in/s?k=' + book.volumeInfo.title"
                     class="bg-slate-700 text-white font-medium py-2 px-4 rounded hover:bg-slate-400 hover:text-black"
+                    target="_blank"
                   >
                     Buy
                   </a>
