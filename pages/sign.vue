@@ -96,7 +96,7 @@ const SignUp = async () => {
       password: password.value,
     });
     if (error) throw error;
-    alert("Signed Up Successfully");
+    alert("Signed Up Successfullyyyy");
 
     window.location.href = "/shelf";
   } catch (error) {
