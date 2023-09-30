@@ -65,31 +65,37 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { supabase } from "/src/lib/supabaseClient";
 
+
+// import { supabase } from "/src/lib/supabaseClient";
 const loading = ref(false);
 const email = ref("");
 const password = ref("");
-
+// const supabase = useSupabaseClient();
 
 const login = async () => {
   try {
     loading.value = true;
-    const { data, error } = await supabase.auth.signUp({
+    const { user, error } = await supabase.auth.signUp({
       email: email.value,
       password: password.value,
     });
-    if (error) throw error;
-    alert(" Welcome To BookStore ");
-    // Redirect to  page
-    window.location.href = "/shelf";
+    
+    if (error) {
+      throw error;
+    }
+
+    if (user) {
+      alert("Welcome To BookStore");
+      // Redirect to the homepage
+      window.location.href = "/shelf";
+    }
   } catch (error) {
     if (error instanceof Error) {
       alert(error.message);
     }
   } finally {
-    loading.value = false;
+    loading.value = false; 
   }
 };
 </script>
