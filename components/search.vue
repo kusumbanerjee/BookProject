@@ -61,7 +61,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+
 
 const query = ref("");
 const loading = ref(false);

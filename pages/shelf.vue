@@ -23,11 +23,14 @@
     </div>
     </template>
     <script setup>
+    import { supabase } from "/src/lib/supabaseClient";
+    console.log(supabase.auth.getUser())
+    
         
     const searchBook = (searchInput) => {
       console.log("Search Book :", searchInput);
     };
     const { data: data } = await useFetch(
-      "https://www.googleapis.com/books/v1/volumes?q=programming+inauthor:keyes&maxResults=40&key=AIzaSyAlTgCaAkO75NYmltCt8UwRvu6VNZXirv0"
+      "https://www.googleapis.com/books/v1/volumes?q=mystery+inauthor:keyes&maxResults=40&key=AIzaSyAlTgCaAkO75NYmltCt8UwRvu6VNZXirv0"
     );
     </script>

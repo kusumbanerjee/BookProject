@@ -18,18 +18,21 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <script setup>
-// need to fix script thoda..
-import { ref } from "vue";
 
-const reviews = ref("");
+
+const reviewText = ref("");
+const reviews = ref([]);
 const reviewSent = ref(false);
 
 const submitReview = () => {
-  reviewSent.value = true;
-
-  reviews.value = "";
+  if (reviewText.value.trim() !== "") {
+    reviews.value.push(reviewText.value);
+    reviewText.value = "";
+    reviewSent.value = true;
+  }
 };
 </script>

@@ -8,15 +8,15 @@
       <div class="text-gray-500 text-md mb-2" v-html="renderedDescription"></div>
     </div>
   </div>
-  <!-- BookReview component -->
+  <!-- Review component -->
   <BookReview :book="book" />
 </template>
 
 <script setup>
 import BookReview from '@/components/BookReview.vue';
-import { defineProps } from 'vue';
 
-// Define props
+
+
 const { title, image, author, des } = defineProps(['title', 'image', 'author', 'des']);
 
 // Func to render the description as HTML

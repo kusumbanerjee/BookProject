@@ -80,7 +80,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+
 import { supabase } from "/src/lib/supabaseClient";
 
 const loading = ref(false);
