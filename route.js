@@ -4,9 +4,9 @@ import index from './pages/index.vue';
 
 
 const routes = [
-   {
-    middleware: ['authenticated'],
-  },
+  //  {
+  //   middleware: ['authenticated'],
+  // },
   // pages
   {
     name: 'page1',
