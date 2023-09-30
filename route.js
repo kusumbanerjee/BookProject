@@ -4,44 +4,42 @@ import index from './pages/index.vue';
 
 
 const routes = [
-
+   {
+    middleware: ['authenticated'],
+  },
   // pages
   {
     name: 'page1',
     path: '/',
-    component: '~/pages/index.vue', // Set 'Page1.vue' as your index page
+    component: '~/pages/index.vue', 
   },
   {
-    name: 'page2', // Name your route
-    path: '/pages', // Define the route path
-    component: '~/pages/Page2.vue', // Point to your Page 2 component
+    name: 'page2', 
+    path: '/pages', 
+    component: '~/pages/Page2.vue', 
   },
   {
-    name: 'page3', // Name your route
-    path: '/page3', // Define the route path
-    component: '~/pages/Page3.vue', // Point to your Page 3 component
+    name: 'page3', 
+    path: '/page3',
+    component: '~/pages/Page3.vue', t
   },
   {
-    name: 'page4', // Name your route
-    path: '/page4', // Define the route path
-    component: '~/pages/Page4.vue', // Point to your Page 4 component
+    name: 'page4', 
+    path: '/page4', 
+    component: '~/pages/Page4.vue', 
   },
   {
-    name: 'page5', // Name your route
-    path: '/page5', // Define the route path
-    component: '~/pages/Page5.vue', // Point to your Page 5 component
+    name: 'page5', 
+    path: '/page5', 
+    component: '~/pages/Page5.vue', 
   },
   {
-    name: 'page6', // Name your route
-    path: '/page6', // Define the route path
-    component: '~/pages/Page6.vue', // Point to your Page 6 component
+    name: 'page6', 
+    path: '/page6', 
+    component: '~/pages/Page6.vue', 
   },
   
-  {
-    name: 'pagination',
-    path: '/pagination/:page',
-    component: '~/pages/pagination/_page.vue',
-  },
+  
   {
     path: '/',
     name: 'Index',
