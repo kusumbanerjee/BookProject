@@ -15,7 +15,7 @@
         :key="page"
         :to="page === 1 ? '/' : `/page${page}`"
         :class="{
-          'bg-slate-700 text-white': currentPage === page,
+          'bg-slate-700 text-white': currentPage == page,
           'bg-slate-300': currentPage !== page
         }"
         class="px-3 py-1 mx-1 rounded cursor-pointer"
@@ -35,7 +35,7 @@
   </template>
   
   <script setup>
-  import { ref } from 'vue';
+ 
 import { useRoute, useRouter } from 'vue-router';
   
   const currentPage = ref(1);

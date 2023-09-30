@@ -1,13 +1,16 @@
 <template>
-  <div>
-    <h1>Explore Mystery Shelf</h1>
-    <Pagination
-      :currentPage="currentPage"
-      :totalPages="totalPages"
-      :prevPage="prevPage"
-      :nextPage="nextPage"
-    />
+  <h1>Explore Mystery Shelf</h1>
+  <Pagination
+  
+    :currentPage="currentPage"
+    :totalPages="totalPages"
+    :prevPage="prevPage"
+    :nextPage="nextPage"
+  />
 
+  <div
+    class="grid md:grid-cols-4 sm:grid-cols-1 justify-items-center bg-slate-200"
+  >
     <div v-for="book in data.items" :key="book.id">
       <BCard
         :bookid="book.id"
@@ -19,14 +22,7 @@
 </template>
 
 <script setup>
-onBeforeMount(() => {
-  const page = parseInt(route.params.page);
-  if (!isNaN(page) && page >= 1 && page <= totalPages) {
-    currentPage.value = page;
-  } else {
-    currentPage.value = 2; // Set 2 for page2, 3 for 3...so on
-  }
-});
+
 
 const { data } = await useFetch(
   "https://www.googleapis.com/books/v1/volumes?q=mystery+inauthor:keyes&maxResults=40&key=AIzaSyAlTgCaAkO75NYmltCt8UwRvu6VNZXirv0" // Replace with your API key
